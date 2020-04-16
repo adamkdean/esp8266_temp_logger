@@ -12,7 +12,7 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/Users/adam/Git/adamkdean/esp8266_temp_logger/.pio/build/huzzah/firmware.elf",
+            "executable": "/Users/adam/Git/adamkdean/esp8266_temp_logger/mcu/.pio/build/huzzah/firmware.elf",
             "toolchainBinDir": "/Users/adam/.platformio/packages/toolchain-xtensa/bin",
             "preLaunchTask": {
                 "type": "PlatformIO",
@@ -24,7 +24,7 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/Users/adam/Git/adamkdean/esp8266_temp_logger/.pio/build/huzzah/firmware.elf",
+            "executable": "/Users/adam/Git/adamkdean/esp8266_temp_logger/mcu/.pio/build/huzzah/firmware.elf",
             "toolchainBinDir": "/Users/adam/.platformio/packages/toolchain-xtensa/bin",
             "internalConsoleOptions": "openOnSessionStart"
         }
