@@ -1,9 +1,1 @@
 .DS_Store
-npm-debug.log
-package-lock.json
-node_modules
-mcu/.pio
-mcu/.vscode/.browse.c_cpp.db*
-mcu/.vscode/c_cpp_properties.json
-mcu/.vscode/launch.json
-mcu/.vscode/ipch
