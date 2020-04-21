@@ -15,13 +15,13 @@
 void setup()
 {
   Serial.begin(9600);
-
-  // Initial delay so I can connect to
-  // serial and start monitoring.
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(5000);
-  digitalWrite(LED_BUILTIN, HIGH);
+
+  // Wait for 3 seconds at startup for
+  // a serial connection to be attached.
+  while (!Serial) {
+    blink(20, 50, 100);
+  }
 
   // Begin the WiFi connection procedure.
   connect_to_wifi();
@@ -33,14 +33,11 @@ void setup()
 void loop()
 {
   char msg[64];
-  sprintf(msg, "Status: %s", wl_status_to_string(WiFi.status()));
+  sprintf(msg, "%s %s",
+    wl_status_to_string(WiFi.status()),
+    WiFi.localIP().toString().c_str());
   Serial.println(msg);
-
-  Serial.println(msg);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(100);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(900);
+  // blink(2, 100, 900);
 }
 
 //
@@ -56,7 +53,7 @@ void connect_to_wifi() {
   while (WiFi.status() != WL_CONNECTED)
   {
     Serial.println("Connecting...");
-    blink_excitedly(20);
+    blink(5, 50, 50);
     delay(500);
   }
 
@@ -68,12 +65,12 @@ void connect_to_wifi() {
 // Blink very fast like something exciting is
 // happening and you want everyone to know!
 //
-void blink_excitedly(int count) {
+void blink(int count, int on, int off) {
   for (int i = 0; i < count; i++) {
     digitalWrite(LED_BUILTIN, LOW);
-    delay(50);
+    delay(on);
     digitalWrite(LED_BUILTIN, HIGH);
-    delay(50);
+    delay(off);
   }
 }
 
