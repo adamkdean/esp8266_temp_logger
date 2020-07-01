@@ -10,4 +10,4 @@ Temperature logging project using ESP8266 WiFi board
 
 ### Notes
 
-The file `mcu/include/WiFiCredentials.h` is ignored with `git update-index --assume-unchanged` so that SSID credentials are not committed to the repo.
+The file `include/WiFiCredentials.h` is ignored with `git update-index --assume-unchanged` so that SSID credentials are not committed to the repo.
