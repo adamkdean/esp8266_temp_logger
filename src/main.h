@@ -6,4 +6,5 @@
 
 void connect_to_wifi();
 void blink(int count, int on, int off);
+float getAvgTemperature(int samples, int interval, float adjustment);
 const char* wl_status_to_string(wl_status_t status);
